@@ -157,6 +157,13 @@ CONFIG_ESP_WIFI_SSID="leo"
 CONFIG_ESP_WIFI_PASSWORD="123456789"
 CONFIG_ESP_MAXIMUM_RETRY=5
 # end of Wifi STA
+
+#
+# Wifi Scan
+#
+CONFIG_EXAMPLE_SCAN_LIST_SIZE=10
+CONFIG_EXAMPLE_DS_TEST=10
+# end of Wifi Scan
 # end of DesktopScreen Configuration
 
 #
