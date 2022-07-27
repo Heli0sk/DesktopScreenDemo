@@ -15,6 +15,7 @@
 #include "esp_log.h"
 
 #include "ds_timer.h"
+#include "ds_spiffs.h"
 
 #define CHIP_NAME "ESP32"
 
@@ -51,6 +52,10 @@ void app_main(void)
     ESP_LOGI(TAG, "system init V1.1");
 
     ds_timer_init();
+
+    init_spiffs();
+    ds_spiffs_test();
+    ds_spiffs_deinit();
 
     xTaskCreate(test_task_example, "test_task_example", 2048, NULL, 10, NULL);
 
