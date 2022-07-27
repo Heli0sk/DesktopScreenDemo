@@ -52,7 +52,6 @@ void IRAM_ATTR timer_group0_isr(void *para)
     timer_event_t evt;
 
     timer_group_clr_intr_status_in_isr(TIMER_GROUP_0, TIMER_0);
-    count_tp_action_manage_time();
 
     /* After the alarm has been triggered
       we need enable it again, so it is triggered the next time */

@@ -14,6 +14,8 @@
 #include "esp_spi_flash.h"
 #include "esp_log.h"
 
+#include "ds_timer.h"
+
 #define CHIP_NAME "ESP32"
 
 static const char *TAG = "MAIN APP";
@@ -47,6 +49,8 @@ void app_main(void)
     printf("Minimum free heap size: %d bytes\n", esp_get_minimum_free_heap_size());
 
     ESP_LOGI(TAG, "system init V1.1");
+
+    ds_timer_init();
 
     xTaskCreate(test_task_example, "test_task_example", 2048, NULL, 10, NULL);
 
