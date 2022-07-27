@@ -17,6 +17,7 @@ idf_component_register(SRCS
                             "src/driver/ds_screen.c"
 
                             "src/net/ds_wifi_ap.c"
+                            "src/net/ds_http_server.c"
                     
                        INCLUDE_DIRS 
                             "."
