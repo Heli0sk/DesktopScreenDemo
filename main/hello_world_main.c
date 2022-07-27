@@ -12,8 +12,11 @@
 #include "freertos/task.h"
 #include "esp_system.h"
 #include "esp_spi_flash.h"
+#include "esp_log.h"
 
 #define CHIP_NAME "ESP32"
+
+static const char *TAG = "MAIN APP";
 
 void app_main(void)
 {
@@ -34,6 +37,8 @@ void app_main(void)
             (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
 
     printf("Minimum free heap size: %d bytes\n", esp_get_minimum_free_heap_size());
+
+    ESP_LOGI(TAG, "system init V1.1");
 
     while(1){
         printf("system run ...\n");
