@@ -15,6 +15,8 @@ idf_component_register(SRCS
 
                             "src/driver/ds_ft6336.c"
                             "src/driver/ds_screen.c"
+
+                            "src/net/ds_wifi_ap.c"
                     
                        INCLUDE_DIRS 
                             "."
@@ -23,4 +25,5 @@ idf_component_register(SRCS
                             "./include/fs"
                             "./include/driver"
                             "./include/data"
+                            "./include/net"
                             )
