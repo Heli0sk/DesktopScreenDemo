@@ -1,52 +1,31 @@
-# Hello World Example
+## idf版本
+xxx@ubuntu:~/work/esp/esp-idf$ idf.py --version
+ESP-IDF v4.1.2-316-g5ea980e80c-dirty
 
-Starts a FreeRTOS task to print "Hello World".
+## 配置环境
+get_idf
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+## 配置 
+idf.py menuconfig
 
-## How to use example
+## 编译
+ idf.py build
 
-Follow detailed instructions provided specifically for this example. 
+## 清除
+idf.py fullclean
 
-Select the instructions depending on Espressif chip installed on your development board:
+## 下载
+idf.py -p /dev/ttyUSB0 flash
 
-- [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
-- [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
+## 监视器
+idf.py -p /dev/ttyUSB0 monitor
 
+## 构建、下载、监视
+idf.py -p /dev/ttyUSB0 flash monitor
 
-## Example folder contents
+## 编译成功提示
+Project build complete.
 
-The project **hello_world** contains one source file in C language [hello_world_main.c](main/hello_world_main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── example_test.py            Python script used for automated example testing
-├── main
-│   ├── CMakeLists.txt
-│   ├── component.mk           Component make file
-│   └── hello_world_main.c
-├── Makefile                   Makefile used by legacy GNU Make
-└── README.md                  This is the file you are currently reading
-```
-
-For more information on structure and contents of ESP-IDF projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the ESP-IDF Programming Guide.
-
-## Troubleshooting
-
-* Program upload failure
-
-    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
-
-## Technical support and feedback
-
-Please use the following feedback channels:
-
-* For technical queries, go to the [esp32.com](https://esp32.com/) forum
-* For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
-
-We will get back to you as soon as possible.
+## 字体库下载
+##                                       端口           波特率                   flash位置     字体库
+python esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200 write_flash -z 0x15D000 DesktopScreenFont.bin

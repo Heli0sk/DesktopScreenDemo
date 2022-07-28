@@ -21,10 +21,14 @@ idf_component_register(SRCS
                             "src/net/ds_wifi_sta.c"
                             "src/net/ds_wifi_scan.c"
                             "src/net/ds_http_request.c"
+
+                            "src/draw/ds_font.c"
+                            "src/draw/ds_paint.c"
                     
                        INCLUDE_DIRS 
                             "."
                             "./include"
+                            "./include/draw"
                             "./include/hal"
                             "./include/fs"
                             "./include/driver"
