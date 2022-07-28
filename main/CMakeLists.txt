@@ -29,4 +29,8 @@ idf_component_register(SRCS
                             "./include/driver"
                             "./include/data"
                             "./include/net"
+                        
+                        EMBED_FILES 
+                            "./html/favicon.ico"
+                            "./html/setting.html"
                             )
