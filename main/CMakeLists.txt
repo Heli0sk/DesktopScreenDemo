@@ -34,4 +34,8 @@ idf_component_register(SRCS
                         EMBED_FILES 
                             "./html/favicon.ico"
                             "./html/setting.html"
+
+                        EMBED_TXTFILES
+                            "https_pem/server_root_cert.pem"
+                            "https_pem/server_root_cert_bilibili.pem"
                             )
